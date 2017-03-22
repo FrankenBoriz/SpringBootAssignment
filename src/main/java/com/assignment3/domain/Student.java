@@ -10,7 +10,7 @@ public class Student
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private Long Id;
 
     private String password;
     private String name;
@@ -35,11 +35,11 @@ public class Student
         return password;
     }
 
-    public long getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         Id = id;
     }
 

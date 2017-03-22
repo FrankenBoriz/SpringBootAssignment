@@ -24,6 +24,12 @@ public class Main {
             log.info("seeding DB");
             Student s = new Student("pass", "Geir", "dappersreet 14", "geir@geir.ru", "ave3615", "12345678");
             repository.save(s);
+
+            log.info("seeded");
+
+            Iterable<Student> fromdb = repository.findAll();
+
+            fromdb.forEach(e -> log.info(e.getName()));
         };
     }
 }
