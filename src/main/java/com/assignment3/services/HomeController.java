@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @EnableAutoConfiguration
-public class Controller1 {
+public class HomeController {
 
     @RequestMapping("/")
     @ResponseBody
