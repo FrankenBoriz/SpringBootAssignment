@@ -1,5 +1,8 @@
 package com.assignment3.services;
 
+import com.assignment3.domain.Student;
+import com.assignment3.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +13,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @EnableAutoConfiguration
 public class HomeController {
 
+    @Autowired
+    StudentRepository StudentRepository;
+
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
+    }
+
+    @RequestMapping("/myprofile")
+    public String greeting(Model model) {
+        Student student = StudentRepository.findAll().iterator().next();
+
+        model.addAttribute("me", student);
+        return "myprofile";
     }
 }
