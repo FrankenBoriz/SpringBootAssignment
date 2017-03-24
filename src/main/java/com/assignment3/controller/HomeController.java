@@ -1,4 +1,4 @@
-package com.assignment3.services;
+package com.assignment3.controller;
 
 import com.assignment3.domain.Student;
 import com.assignment3.repository.StudentRepository;
@@ -15,6 +15,26 @@ public class HomeController {
 
     @Autowired
     StudentRepository StudentRepository;
+
+
+
+    @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+
+
+    @RequestMapping("/login" )
+    public String login() {
+        return "login";
+    }
+
+
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
