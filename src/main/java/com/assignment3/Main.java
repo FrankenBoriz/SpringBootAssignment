@@ -22,7 +22,7 @@ public class Main {
 	public CommandLineRunner seed(StudentRepository repository) {
         return args -> {
             log.info("seeding DB");
-            Student s = new Student("pass", "Geir", "dappersreet 14", "geir@geir.ru", "ave3615", "12345678");
+            Student s = new Student("pass", "Boris", "Oslo 23", "Boris@bor.bo", "ave3615", "12345678");
             repository.save(s);
 
             log.info("seeded");
@@ -30,6 +30,8 @@ public class Main {
             Iterable<Student> fromdb = repository.findAll();
 
             fromdb.forEach(e -> log.info(e.getName()));
+
+            Logger logger = LoggerFactory.getLogger(Main.class);
         };
     }
 }

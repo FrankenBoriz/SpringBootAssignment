@@ -1,4 +1,4 @@
-package com.assignment3.controller;
+package com.assignment3.service;
 
 import com.assignment3.domain.Student;
 import com.assignment3.repository.StudentRepository;
